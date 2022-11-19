@@ -1,0 +1,54 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+ <!-- content for edit page-->
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-offset-3 col-md-6">
+            <h1><%= title%></h1>
+            <form class = "form" method="post">
+            
+            <div class ="form-group">
+                <label for="NameTextField">Medicine Title</label>
+                 <input type ="text" class ="form-control"
+                 id="NameTextField"
+                 placeholder ="Enter the Medicine name"
+                 name ="name"
+                 value ="<%=medicine.name%>"
+                  required>
+            </div>
+              
+            <div class ="form-group">
+                <label for="TypeTextField">Medicine Type</label>
+                 <input type ="text" class ="form-control"
+                 id="TypeTextField"
+                 placeholder ="Enter the Medicine type"
+                 name ="Type" 
+                value ="<%=medicine.Type%>"
+                 required>
+            </div>
+
+
+            <div class ="form-group">
+                <label for="amountTextField">Medicine amount (price)</label>
+                 <input type ="number" class ="form-control"
+                 id="amountTextField"
+                 placeholder ="Enter the Medicine amount"
+                 name ="amount"
+                 value ="<%=medicine.amount%>"
+                  required>
+            </div>
+            <br>
+           <button class="btn-btn-primary" type="submit">
+           <i class="fas fa-edit"></i>Submit</button>
+
+
+            <a href ="/medicine" class="btn btn-warning">
+                <i class="fas fa-undo"></i>Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>
+

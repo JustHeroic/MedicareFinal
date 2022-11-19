@@ -1,0 +1,50 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+<!-- Main Content -->
+<main class="container">
+    <div class= "row">
+      <div class ="col-md-offset-3 col-md-10">
+          <h1> Welcome to MediCare's list of Medicine </h1>
+          <a href = "/medicine/add" class ="btn btn-primary" role = "button">
+            <i class ="fas-fa-plus-circle"></i> Add Medicine </a>
+        <br>
+        <br>
+    <table class ="table table-brodered table-striped table-hover">
+    <tr class = "d-flex">
+        <th class="text-center col-2">Name of the medicine</th>
+        <th class="text-center col-2">Type of medicine</th>
+        <th class="text-center col-2">Amount(in USD)</th>
+        <th class="text-center col-2"></th>
+        <th class="text-center col-2"></th>
+    </tr>
+    <!-- repeat the template-->
+    <% for(let count=0; count<MedicineStore.length; count++){%>
+    <tr class = "d-flex">
+      <td class ="text-center  col-2"><%= MedicineStore[count].name %></td>
+      <td class ="text-center  col-2"><%= MedicineStore[count].Type %></td>
+      <td class ="text-center  col-2"><%= MedicineStore[count].amount %></td>
+      <td class ="text-center  col-2">
+          <a href ="/medicine/edit/<%= MedicineStore[count]._id %>"
+              class ="btn btn-primary">
+              <i class ="fas fa-pencil-alt"></i> Edit </a>
+          </td> 
+          
+
+          <td class ="text-center  col-2">
+          <a href ="/medicine/delete/<%= MedicineStore[count]._id %>" 
+          class ="btn btn-danger">
+          <i class ="fas fa-trash-alt"></i> Delete </a>
+          </td> 
+     
+
+    </tr>
+    <%} %>
+    </table>
+
+</div>
+</div>
+</main>
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>
+
+
